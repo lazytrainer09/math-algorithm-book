@@ -2,16 +2,10 @@ N = int(input())
 A = list(map(int, input().split()))
 
 def euclidean_algorithm(a, b):
-  while a >= 1 and b >= 1:
-    if a >= b:
-      a %= b
-    else:
-      b %= a
-
-  if a != 0:
+  if b == 0:
     return a
-
-  return b
+  else:
+    return euclidean_algorithm(b, a%b)
 
 ans = A[0]
 
